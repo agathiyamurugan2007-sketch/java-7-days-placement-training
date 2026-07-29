@@ -1,0 +1,17 @@
+import java.util.Scanner;
+
+class DigitSegregation {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        int n = sc.nextInt();
+
+        System.out.print("Even digits: ");
+        while (n > 0) {
+            int rem = n % 10;
+            if (rem % 2 == 0)
+                System.out.print(rem + " ");
+            n = n / 10;
+        }
+    }
+}

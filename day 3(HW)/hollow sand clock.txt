@@ -1,0 +1,20 @@
+import java.util.*;
+
+class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+
+        for (int i = 0; i < 2 * n - 1; i++) {
+            int x = (i < n) ? i : 2 * n - 2 - i;
+
+            for (int j = 0; j < x; j++) System.out.print(" ");
+
+            int s = 2 * (n - x) - 1;
+            for (int j = 0; j < s; j++)
+                System.out.print((x == 0 || j == 0 || j == s - 1) ? "*" : " ");
+
+            System.out.println();
+        }
+    }
+}

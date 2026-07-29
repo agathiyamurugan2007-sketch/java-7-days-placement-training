@@ -1,0 +1,37 @@
+import java.util.Scanner;
+
+public class DaysInYear {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter day: ");
+        int day = sc.nextInt();
+
+        System.out.print("Enter month: ");
+        int month = sc.nextInt();
+
+        System.out.print("Enter year: ");
+        int year = sc.nextInt();
+
+        int[] days = {31,28,31,30,31,30,31,31,30,31,30,31};
+
+        // Leap year
+        if ((year % 400 == 0) || (year % 4 == 0 && year % 100 != 0)) {
+            days[1] = 29;
+        }
+
+        int completed = 0;
+
+        for (int i = 0; i < month - 1; i++) {
+            completed += days[i];
+        }
+
+        completed += day;
+
+        int totalDays = (days[1] == 29) ? 366 : 365;
+        int remaining = totalDays - completed;
+
+        System.out.println("Completed days = " + completed);
+        System.out.println("Remaining days = " + remaining);
+    }
+}

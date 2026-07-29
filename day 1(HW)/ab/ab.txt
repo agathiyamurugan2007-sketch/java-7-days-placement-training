@@ -1,0 +1,32 @@
+import java.util.Scanner;
+
+public class BetrothedPair {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter first number: ");
+        int a = sc.nextInt();
+
+        System.out.print("Enter second number: ");
+        int b = sc.nextInt();
+
+        int sum1 = 0, sum2 = 0;
+
+        // Sum of proper divisors of first number
+        for (int i = 1; i < a; i++) {
+            if (a % i == 0)
+                sum1 += i;
+        }
+
+        // Sum of proper divisors of second number
+        for (int i = 1; i < b; i++) {
+            if (b % i == 0)
+                sum2 += i;
+        }
+
+        if (sum1 == b + 1 && sum2 == a + 1)
+            System.out.println("Betrothed Pair");
+        else
+            System.out.println("Not a Betrothed Pair");
+    }
+}
